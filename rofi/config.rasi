@@ -1,0 +1,171 @@
+configuration {
+    modi: "drun,run,window";
+
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    drun-display-format: "{name}";
+    drun-show-actions:   false;
+    drun-match-fields:   "name,generic,exec,categories,keywords";
+
+    font: "JetBrainsMono Nerd Font 10";
+
+    matching:        "fuzzy";
+    sort:            true;
+    sorting-method:  "normal";
+    case-sensitive:  false;
+    cycle:           true;
+    history-limit:   25;
+    tokenize:        true;
+}
+
+* {
+    bg:         #1e1e2e;
+    bg-alt:     #181825;
+    bg-surface: #313244;
+    bg-list:    #181825;
+    bg-select:  #45475a;
+    bg-accent:  #cba6f7;
+    on-accent:  #11111b;
+    fg:         #cdd6f4;
+    fg-dim:     #a6adc8;
+    fg-faint:   #6c7086;
+    cyan:       #89dceb;
+    green:      #a6e3a1;
+    red:        #f38ba8;
+    peach:      #fab387;
+
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+    cursor:  "default";
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            760px;
+    border:           2px;
+    border-color:     @bg-accent;
+    border-radius:    14px;
+    padding:          6px;
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+mainbox {
+    orientation: vertical;
+    children:    [ inputbar, message, listview, mode-switcher ];
+    spacing:     8px;
+    padding:     8px;
+}
+
+inputbar {
+    orientation:      horizontal;
+    children:         [ prompt, entry ];
+    spacing:          6px;
+    padding:          10px 14px;
+    background-color: @bg-alt;
+    border-radius:    8px;
+}
+
+prompt {
+    text-color: @bg-accent;
+}
+
+entry {
+    placeholder:       "Поиск приложений…";
+    placeholder-color: @fg-faint;
+    text-color:        @fg;
+    cursor:            "text";
+}
+
+message {
+    padding:         4px 14px;
+    background-color: @bg-surface;
+    border-radius:    6px;
+    text-color:       @fg-dim;
+}
+
+listview {
+    lines:        4;
+    columns:      4;
+    flow:         horizontal;
+    spacing:      8px;
+    padding:      4px;
+    fixed-height: true;
+    dynamic:      false;
+    scrollbar:    false;
+}
+
+element {
+    orientation:     vertical;
+    spacing:         8px;
+    padding:         12px 8px;
+    border-radius:   10px;
+    background-color: transparent;
+    text-color:      @fg;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element alternate.normal {
+    background-color: transparent;
+}
+
+element normal.urgent {
+    text-color: @red;
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color:       @on-accent;
+}
+
+element selected.active {
+    background-color: @green;
+    text-color:       @on-accent;
+}
+
+element normal.active {
+    text-color: @cyan;
+}
+
+element selected.normal {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius:   10px;
+    text-color:      @on-accent;
+}
+
+element-icon {
+    size:             40px;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+    text-color:       @fg;
+}
+
+mode-switcher {
+    orientation: horizontal;
+    spacing:     6px;
+    padding:     4px 0 0 0;
+}
+
+button {
+    padding:          7px 14px;
+    border-radius:    8px;
+    background-color: @bg-surface;
+    text-color:       @fg-dim;
+    cursor:           "pointer";
+}
+
+button selected {
+    background-color: @bg-accent;
+    text-color:       @on-accent;
+    font-weight:      bold;
+}
