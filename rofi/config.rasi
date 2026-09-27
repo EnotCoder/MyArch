@@ -1,5 +1,9 @@
 configuration {
     modi: "drun,run,window";
+    modes: "drun,run,window";
+
+    /* Фолбэк-иконка для приложений без иконки */
+    application-fallback-icon: "application-x-executable";
 
     show-icons:          true;
     icon-theme:          "Papirus";

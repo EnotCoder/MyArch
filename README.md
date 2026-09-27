@@ -22,9 +22,11 @@ rofi -config ~/.config/rofi/config.rasi -show drun
 ## Что внутри
 
 - **Сетка 4×4**: `listview { columns: 4; lines: 4; flow: horizontal }`, иконка над текстом (`element { orientation: vertical }`).
-- **Иконки**: Papirus/Papirus, показ включён (`show-icons`).
+- **Иконки**: Papirus, показ включён (`show-icons`).
+- **Фолбэк-иконка**: `application-fallback-icon: "application-x-executable"` — программам без иконки подставляется иконка «исполняемый файл».
 - **Цвета**: Catppuccin Mocha (base `#1e1e2e`, mauve `#cba6f7`, текст `#cdd6f4`).
 - **Режимы**: `drun,run,window` — переключение вкладками внизу (`mode-switcher`).
+- **rofi 2.0**: режимы задаются через `modes:` (`modi:` оставлен для совместимости со старыми версиями). Комментарии только в формате `/* */` — строка с `#` ломает парсер rofi 2.0.
 - **Поиск**: `fuzzy` matching, история, сортировка.
 
 ## Запуск из sxhkd
