@@ -20,6 +20,11 @@ configuration {
     cycle:           true;
     history-limit:   25;
     tokenize:        true;
+
+    /* Мышь: выделение при наведении, одиночный клик = запуск */
+    hover-select:             true;
+    me-accept-entry:          "MousePrimary";
+    me-select-entry:          "";
 }
 
 * {
@@ -108,6 +113,7 @@ element {
     border-radius:   10px;
     background-color: transparent;
     text-color:      @fg;
+    cursor:          "pointer";
 }
 
 element normal.normal {
@@ -137,9 +143,9 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: @bg-select;
     border-radius:   10px;
-    text-color:      @on-accent;
+    text-color:      @fg;
 }
 
 element-icon {
